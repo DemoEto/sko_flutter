@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sko_flutter/login/login_page.dart';
+import 'package:sko_flutter/login/presentation/login_page.dart';
 
 void main() {
   runApp(const MyApp());
