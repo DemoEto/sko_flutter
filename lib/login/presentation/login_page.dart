@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:sko_flutter/home/presentation/home_page.dart';
 import 'package:sko_flutter/register/register_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -64,9 +65,9 @@ class _LoginPageState extends State<LoginPage> {
 
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        "เข้าสู่ระบบ",
+                        context.tr("Login"),
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -74,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "สหกรณ์ออมทรัพย์ครูสระแก้ว",
+                        context.tr("SakaeoTeachersSavingsCooperative"),
                         style: TextStyle(fontSize: 20, color: Colors.grey),
                       ),
                     ],
@@ -87,11 +88,11 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
-                  labelText: "เลขสมาชิก",
+                  labelText: context.tr("MemberNo"),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  hintText: "เลขสมาชิก",
+                  hintText: context.tr("MemberNo"),
                 ),
               ),
 
@@ -101,11 +102,11 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
-                  labelText: "รหัสผ่าน",
+                  labelText: context.tr("Password"),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  hintText: "รหัสผ่าน",
+                  hintText: context.tr("Password"),
                 ),
               ),
 
@@ -117,15 +118,15 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: loading ? null : login,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
+                    backgroundColor: Color(0xFF4A7FD8),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                   child: loading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text(
-                          "เข้าสู่ระบบ",
+                      : Text(
+                          context.tr("Login"),
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                 ),
@@ -146,11 +147,13 @@ class _LoginPageState extends State<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
+                      
                     ),
+                    
                   ),
-                  child: const Text(
-                    "สมัครใช้บริการ",
-                    style: TextStyle(fontSize: 18),
+                  child: Text(
+                    context.tr("RegisterLink"),
+                    style: TextStyle(fontSize: 18,color: Color(0xFF4A7FD8),),
                   ),
                 ),
               ),

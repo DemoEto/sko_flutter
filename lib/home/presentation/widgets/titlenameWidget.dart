@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sko_flutter/notification/presentation/notification_page.dart';
 import 'package:sko_flutter/setting/presentation/setting_page.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class titlenameWidget extends StatelessWidget {
   const titlenameWidget({super.key});
 
@@ -25,21 +25,21 @@ class titlenameWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('ออกจากระบบ'),
-          content: const Text('คุณต้องการออกจากระบบหรือไม่?'),
+          title: Text(context.tr("Logout")),
+          content:Text(context.tr("LogoutConfirm")),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('ยกเลิก'),
+              child: Text(context.tr("Cancel"))
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('ออกจากระบบสำเร็จ')),
+                  SnackBar(content: Text(context.tr("LoggedOut"))),
                 );
               },
-              child: const Text('ยืนยัน'),
+              child: Text(context.tr("Confirm")),
             ),
           ],
         );
@@ -80,8 +80,8 @@ class titlenameWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'สวัสดี',
+                  Text(
+                    context.tr("Hello"),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,

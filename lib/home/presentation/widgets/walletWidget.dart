@@ -3,7 +3,7 @@ import 'package:sko_flutter/saveing_account/presentation/saving_account_page.dar
 import 'package:sko_flutter/saveing_account/presentation/recently_active_accounts_page.dart';
 import 'package:sko_flutter/loan_contract/presentation/loan_contract_page.dart';
 import 'package:sko_flutter/loan_contract/presentation/recently_active_loanaccounts_page.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 
 
 class walletWidget extends StatelessWidget {
@@ -16,20 +16,20 @@ class walletWidget extends StatelessWidget {
       child: Column(
         children: [
           _buildWalletCard(
-            'เงินฝากกองเครือรวม',
-            '6 บัญชี', //todo: show number of saving account
+            context.tr("TotalDeposits"),
+            context.tr("Account_count"), //todo: show number of saving account
             [
-              _buildIconButton(context, Icons.wallet, 'ดูบัญชีเงินฝาก', Colors.purple, const SavingAccountPage()),
-              _buildIconButton(context, Icons.phone_android, 'บัญชีที่เคลือนไหวล่าสุด', Colors.pink, const RecentlyActiveAccountsPage()),
+              _buildIconButton(context, Icons.wallet, context.tr("ViewAccount"), Colors.purple, const SavingAccountPage()),
+              _buildIconButton(context, Icons.phone_android, context.tr("RecentTransactions"), Colors.pink, const RecentlyActiveAccountsPage()),
             ],
           ),
           const SizedBox(height: 15),
           _buildWalletCard(
-            'หนี้คงเหลือรวม',
-            '1 สัญญา', //todo: show number of contract
+            context.tr("TotalDebt"),
+            context.tr("DebtContract_count"), //todo: show number of contract
             [
-              _buildIconButton(context, Icons.content_paste_search_outlined, 'ดูสัญญาเงินกู้', Colors.blue, const LoanContractPage()),
-              _buildIconButton(context, Icons.phone_android, 'บัญชีที่เคลื่อนไหวล่าสุด', Colors.pink, const RecentlyActiveLoanaccountsPage()),
+              _buildIconButton(context, Icons.content_paste_search_outlined, context.tr("ViewLoanContract"), Colors.blue, const LoanContractPage()),
+              _buildIconButton(context, Icons.phone_android, context.tr("RecentTransactions"), Colors.pink, const RecentlyActiveLoanaccountsPage()),
             ],
           ),
         ],
