@@ -476,12 +476,15 @@
     "ProtectionEndDate": "Protection End Date",
     "CoverageLimit": "Coverage Limit",
     "SakaeoTeachersSavingsCooperative": "Sakaeo Teachers Saving\nCooperative",
-
     "TotalDeposits":"Total deposits",
     "ViewAccount":"View Account",
     "RecentTransactions":"Recent\nTransactions",
     "DebtContract_count":"{{count}} Contract",
     "ViewLoanContract":"View Loan Contract",
-    "Langage":"Langage"
-
+    "Langage":"Langage",
+    "ManageAccount":"Manage Account",
+    "PayShareDebt":"Pay Share Debt",
+    "WithdrawDeposites":"Withdraw Deposites",
+    "DepositAccount":"Deposit to Account",
+    "TransferMyself":"Transfer Myself"
 }

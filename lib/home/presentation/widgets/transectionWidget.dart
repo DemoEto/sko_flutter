@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sko_flutter/login/presentation/login_page.dart';
 
@@ -17,8 +18,8 @@ class transactionWidget extends StatelessWidget {
               color: Colors.red,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Text(
-              'ธุรกรรม',
+            child: Text(
+              context.tr("Transactions"),
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -30,16 +31,16 @@ class transactionWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildTransactionItem(Icons.wallet, 'จัดการบัญชี', Colors.green),
+              _buildTransactionItem(Icons.wallet, context.tr("ManageAccount"), Colors.green),
               _buildTransactionItem(
                 Icons.phone_in_talk,
-                'ชำระหุ้นหนี้',
+                context.tr("PayShareDebt"),
                 Colors.orange,
               ),
-              _buildTransactionItem(Icons.store, 'ถอนเงินฝาก', Colors.blue),
+              _buildTransactionItem(Icons.store, context.tr("WithdrawDeposites"), Colors.blue),
               _buildTransactionItem(
                 Icons.account_balance,
-                'ฝากเงินเข้า\nบัญชิ',
+                context.tr("DepositAccount"),
                 Colors.orange,
               ),
             ],
@@ -51,7 +52,7 @@ class transactionWidget extends StatelessWidget {
               const SizedBox(width: 20),
               _buildTransactionItem(
                 Icons.account_balance_wallet,
-                'โอนภายในบัญชีตัวเอง',
+                context.tr("TransferMyself"),
                 Colors.teal,
               ),
             ],

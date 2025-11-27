@@ -472,11 +472,15 @@
     "PaymentDate" : "วันที่ชำระ",
     "selectpaymentmethod":"เลือกวิธีการชำระเงิน",
     "SakaeoTeachersSavingsCooperative": "สหกรณ์ออมทรัพย์ครูสระแก้ว",
-
     "TotalDeposits":"เงินฝากคงเหลือรวม",
     "ViewAccount":"ดูบัญชีเงินฝาก",
     "RecentTransactions":"บัญชีที่เคลือนไหวล่าสุด",
     "DebtContract_count": "{{count}} สัญญา",
     "ViewLoanContract":"ดูสัญญาเงินกู้",
-    "Langage":"ภาษา"
+    "Langage":"ภาษา",
+    "ManageAccount":"จัดการบัญชี",
+    "PayShareDebt":"ชำระหุ้นหนี้",
+    "WithdrawDeposites":"ถอนเงินฝาก",
+    "DepositAccount":"ฝากเงินเข้า\nบัญชิ",
+    "TransferMyself":"โอนภายในบัญชีตัวเอง"
 }
