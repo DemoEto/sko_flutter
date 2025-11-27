@@ -9,46 +9,55 @@ class AppSettingwidget extends StatelessWidget {
     return Column(
       children: [
         Container(
-              width: double.infinity,
-              padding: EdgeInsets.fromLTRB(15, 10, 0, 10),
-              decoration: BoxDecoration(color: Colors.grey[200]),
-              child: Text(
-                'Application Settings',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-            ),
+          width: double.infinity,
+          padding: EdgeInsets.fromLTRB(15, 10, 0, 10),
+          decoration: BoxDecoration(color: Colors.grey[200]),
+          child: Text(
+            'Application Settings',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+        ),
 
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
                 children: [
                   const Icon(Icons.language, size: 35, color: Colors.lightBlue),
+                  SizedBox(width: 10,),
                   Text(context.tr("Langage"), style: TextStyle(fontSize: 16)),
-                  ElevatedButton(onPressed: onPressed, child: child)
                 ],
               ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.9, // 80% ของหน้าจอ
-              child: const Divider(color: Colors.grey, thickness: 1),
-            ),
-
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-              child: Row(
+              Row(
                 children: [
-                  const Icon(Icons.language, size: 35, color: Colors.lightBlue),
-                  const Text('Langage', style: TextStyle(fontSize: 16)),
+                  ElevatedButton(
+                    onPressed: () {
+                      if (context.locale.languageCode == 'th') {
+                        context.setLocale(const Locale('en'));
+                      } else {
+                        context.setLocale(const Locale('th'));
+                      }
+                    },
+                    child: Text(
+                      context.locale.languageCode == 'th'
+                          ? 'เปลี่ยนเป็นภาษาอังกฤษ'
+                          : 'Switch to Thai',style: TextStyle(color: Color(0xFF4A7FD8)),
+                    ),
+                  ),
                 ],
               ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.9, // 80% ของหน้าจอ
-              child: const Divider(color: Colors.grey, thickness: 1),
-            ),
+              // ElevatedButton(onPressed: onPressed, child: child)
+            ],
+          ),
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.9, // 80% ของหน้าจอ
+          child: const Divider(color: Colors.grey, thickness: 1),
+        ),
+
       ],
     );
   }
