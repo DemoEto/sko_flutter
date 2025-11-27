@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:sko_flutter/notification/presentation/notification_page.dart';
 import 'package:sko_flutter/setting/presentation/setting_page.dart';
 import 'package:easy_localization/easy_localization.dart';
-class titlenameWidget extends StatelessWidget {
-  const titlenameWidget({super.key});
+class TitlenameAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const TitlenameAppBar({super.key});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 
   void _showNotifications(BuildContext context) {
     Navigator.push(
@@ -26,11 +29,11 @@ class titlenameWidget extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(context.tr("Logout")),
-          content:Text(context.tr("LogoutConfirm")),
+          content: Text(context.tr("LogoutConfirm")),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text(context.tr("Cancel"))
+              child: Text(context.tr("Cancel")),
             ),
             TextButton(
               onPressed: () {
@@ -58,77 +61,79 @@ class titlenameWidget extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: const Icon(
-                  Icons.person,
-                  color: Color(0xFF4A7FD8),
-                  size: 30,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr("Hello"),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+      child: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                  const Text(
-                    'ชื่อ - สกุล', //todo: show name of user
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: const Icon(
+                    Icons.person,
+                    color: Color(0xFF4A7FD8),
+                    size: 30,
                   ),
-                ],
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.notifications_outlined,
-                  color: Colors.white,
-                  size: 28,
                 ),
-                onPressed: () => _showNotifications(context),
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.settings_outlined,
-                  color: Colors.white,
-                  size: 28,
+                const SizedBox(width: 12),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr("Hello"),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Text(
+                      'ชื่อ - สกุล',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                onPressed: () => _showSettings(context),
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.power_settings_new,
-                  color: Colors.white,
-                  size: 28,
+              ],
+            ),
+            Row(
+              children: [
+                IconButton(
+                  icon: const Icon(
+                    Icons.notifications_outlined,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  onPressed: () => _showNotifications(context),
                 ),
-                onPressed: () => _showLogout(context),
-              ),
-            ],
-          ),
-        ],
+                IconButton(
+                  icon: const Icon(
+                    Icons.settings_outlined,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  onPressed: () => _showSettings(context),
+                ),
+                IconButton(
+                  icon: const Icon(
+                    Icons.power_settings_new,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  onPressed: () => _showLogout(context),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

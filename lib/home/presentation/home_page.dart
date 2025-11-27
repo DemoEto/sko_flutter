@@ -15,12 +15,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: TitlenameAppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const[
-              titlenameWidget(),
+
               SizedBox(height: 20),
 
               // ส่วนที่ 2: Wallet Section
