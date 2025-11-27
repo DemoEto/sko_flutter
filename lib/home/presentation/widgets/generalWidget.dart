@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 // Widget ที่ 4: General Widget
 class generalWidget extends StatelessWidget {
@@ -17,8 +18,8 @@ class generalWidget extends StatelessWidget {
               color: const Color(0xFF4A7FD8),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Text(
-              'ทั่วไป',
+            child: Text(
+              context.tr("General"),
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -30,10 +31,10 @@ class generalWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildGeneralItem(Icons.people, 'หุ้น', Colors.blue),
-              _buildGeneralItem(Icons.calendar_today, 'การจำค่าประกับ', Colors.red),
-              _buildGeneralItem(Icons.store_mall_directory, 'สรุปรัยอวณม', Colors.brown),
-              _buildGeneralItem(Icons.calendar_month, 'รายการ\nประชุม', Colors.grey),
+              _buildGeneralItem(Icons.people, context.tr("Share"), Colors.blue),
+              _buildGeneralItem(Icons.calendar_today, context.tr("Guarantees"), Colors.red),
+              _buildGeneralItem(Icons.store_mall_directory, context.tr("BalanceConfirm"), Colors.brown),
+              _buildGeneralItem(Icons.calendar_month, context.tr("Meetings"), Colors.grey),
             ],
           ),
         ],

@@ -486,5 +486,11 @@
     "PayShareDebt":"Pay Share Debt",
     "WithdrawDeposites":"Withdraw Deposites",
     "DepositAccount":"Deposit to Account",
-    "TransferMyself":"Transfer Myself"
+    "TransferMyself":"Transfer Myself",
+    "Share":"Share",
+    "Guarantees":"Guarantees",
+    "BalanceConfirm":"Balance Confirm",
+    "Meetings":"Meetings"
+
+
 }

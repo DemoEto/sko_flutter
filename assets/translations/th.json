@@ -482,5 +482,9 @@
     "PayShareDebt":"ชำระหุ้นหนี้",
     "WithdrawDeposites":"ถอนเงินฝาก",
     "DepositAccount":"ฝากเงินเข้า\nบัญชิ",
-    "TransferMyself":"โอนภายในบัญชีตัวเอง"
+    "TransferMyself":"โอนภายในบัญชีตัวเอง",
+    "Share":"หุ้น",
+    "Guarantees":"การค้ำประกัน",
+    "BalanceConfirm":"สรุปยอดรวม",
+    "Meetings":"รายการประชุม"
 }
