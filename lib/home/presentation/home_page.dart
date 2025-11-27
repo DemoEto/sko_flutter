@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sko_flutter/home/presentation/widgets/titlenameWidget.dart';
 import 'package:sko_flutter/home/presentation/widgets/walletWidget.dart';
-import 'package:sko_flutter/home/presentation/widgets/transectionWidget.dart';
+import 'package:sko_flutter/home/presentation/widgets/transactionWidget.dart';
 import 'package:sko_flutter/home/presentation/widgets/generalWidget.dart';
 
 class HomePage extends StatefulWidget {

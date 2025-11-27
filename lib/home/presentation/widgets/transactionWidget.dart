@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:sko_flutter/login/presentation/login_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/deposit_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/manage_account_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/pay_debt_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/withdraw_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/transfer_ownaccount_page.dart';
 
 class transactionWidget extends StatelessWidget {
   const transactionWidget({Key? key}) : super(key: key);
@@ -31,17 +35,17 @@ class transactionWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildTransactionItem(Icons.wallet, context.tr("ManageAccount"), Colors.green),
+              _buildTransactionItem(context,Icons.wallet, context.tr("ManageAccount"), Colors.green, const AccountManagementPage()),
               _buildTransactionItem(
-                Icons.phone_in_talk,
+                context,Icons.phone_in_talk,
                 context.tr("PayShareDebt"),
-                Colors.orange,
+                Colors.orange,const PayDebtPage()
               ),
-              _buildTransactionItem(Icons.store, context.tr("WithdrawDeposites"), Colors.blue),
+              _buildTransactionItem(context,Icons.store, context.tr("WithdrawDeposites"), Colors.blue,const WithdrawPage()),
               _buildTransactionItem(
-                Icons.account_balance,
+                context,Icons.account_balance,
                 context.tr("DepositAccount"),
-                Colors.orange,
+                Colors.orange,const DepositPage()
               ),
             ],
           ),
@@ -51,9 +55,9 @@ class transactionWidget extends StatelessWidget {
             children: [
               const SizedBox(width: 20),
               _buildTransactionItem(
-                Icons.account_balance_wallet,
+                context,Icons.account_balance_wallet,
                 context.tr("TransferMyself"),
-                Colors.teal,
+                Colors.teal,const TransferOwnaccountPage()
               ),
             ],
           ),
@@ -62,8 +66,17 @@ class transactionWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTransactionItem(IconData icon, String label, Color color,) {
-    return Column(
+  Widget _buildTransactionItem(BuildContext context,IconData icon, String label, Color color,Widget page) {
+    return InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder:(context) => page,
+            )
+          );
+        },
+    child: Column(
       children: [
         Container(
             width: 60,
@@ -85,6 +98,6 @@ class transactionWidget extends StatelessWidget {
           ),
         ),
       ],
-    );
+    ));
   }
 }

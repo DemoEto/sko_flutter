@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:sko_flutter/general/presentation/balance_confirm_page.dart';
+import 'package:sko_flutter/general/presentation/guarantees_page.dart';
+import 'package:sko_flutter/general/presentation/meetings_page.dart';
+import 'package:sko_flutter/general/presentation/share_page.dart';
 
 // Widget ที่ 4: General Widget
 class generalWidget extends StatelessWidget {
@@ -31,10 +35,34 @@ class generalWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildGeneralItem(Icons.people, context.tr("Share"), Colors.blue),
-              _buildGeneralItem(Icons.calendar_today, context.tr("Guarantees"), Colors.red),
-              _buildGeneralItem(Icons.store_mall_directory, context.tr("BalanceConfirm"), Colors.brown),
-              _buildGeneralItem(Icons.calendar_month, context.tr("Meetings"), Colors.grey),
+              _buildGeneralItem(
+                context,
+                Icons.people,
+                context.tr("Share"),
+                Colors.blue,
+                const SharePage(),
+              ),
+              _buildGeneralItem(
+                context,
+                Icons.calendar_today,
+                context.tr("Guarantees"),
+                Colors.red,
+                const GuaranteesPage(),
+              ),
+              _buildGeneralItem(
+                context,
+                Icons.store_mall_directory,
+                context.tr("BalanceConfirm"),
+                Colors.brown,
+                const BalanceConfirmPage(),
+              ),
+              _buildGeneralItem(
+                context,
+                Icons.calendar_month,
+                context.tr("Meetings"),
+                Colors.grey,
+                const MeetingsPage(),
+              ),
             ],
           ),
         ],
@@ -42,29 +70,40 @@ class generalWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildGeneralItem(IconData icon, String label, Color color) {
-    return Column(
-      children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(15),
+  Widget _buildGeneralItem(
+    BuildContext context,
+    IconData icon,
+    String label,
+    Color color,
+    Widget page,
+  ) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Icon(icon, color: color, size: 32),
           ),
-          child: Icon(icon, color: color, size: 32),
-        ),
-        const SizedBox(height: 8),
-        SizedBox(
-          width: 70,
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 11),
-            maxLines: 2,
+          const SizedBox(height: 8),
+          SizedBox(
+            width: 70,
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 11),
+              maxLines: 2,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
