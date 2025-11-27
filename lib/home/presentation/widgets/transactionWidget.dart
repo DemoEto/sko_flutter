@@ -35,7 +35,7 @@ class transactionWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildTransactionItem(context,Icons.wallet, context.tr("ManageAccount"), Colors.green, const AccountManagementPage()),
+              _buildTransactionItem(context,Icons.wallet, context.tr("ManageAccount"), Colors.green, const ManageAccountPage()),
               _buildTransactionItem(
                 context,Icons.phone_in_talk,
                 context.tr("PayShareDebt"),

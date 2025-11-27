@@ -13,7 +13,7 @@ class AppSettingwidget extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(15, 10, 0, 10),
           decoration: BoxDecoration(color: Colors.grey[200]),
           child: Text(
-            'Application Settings',
+            context.tr("ApplicationSettings"),
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),

@@ -7,24 +7,13 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: titleWidget(),
+      appBar: titleWidget(context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            //-- Account Settings
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.fromLTRB(15, 10, 0, 10),
-              decoration: BoxDecoration(color: Colors.grey[200]),
-              child: Text(
-                'Account Settings',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-            ),
+            
             AppSettingwidget(),
-
-            //-- Application Settings
             
           ],
         ),
