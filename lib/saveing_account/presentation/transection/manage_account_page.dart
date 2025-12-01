@@ -1,18 +1,72 @@
+
 import 'package:flutter/material.dart';
+import 'widgets/accountToggleButtonWidget.dart';
+import 'widgets/accountListWidget.dart';
 import 'package:easy_localization/easy_localization.dart';
+import '../../data/models/accountModel.dart';
+import 'widgets/addCoopAccountButtonWidget.dart';
 
 class ManageAccountPage extends StatefulWidget {
-  const ManageAccountPage({super.key});
+  const ManageAccountPage({Key? key}) : super(key: key);
 
   @override
   State<ManageAccountPage> createState() => _ManageAccountPageState();
 }
 
-class _ManageAccountPageState extends State<ManageAccountPage> with SingleTickerProviderStateMixin{
-  
+class _ManageAccountPageState extends State<ManageAccountPage>
+    with SingleTickerProviderStateMixin {
   late PageController _pageController;
   late AnimationController _animationController;
   int _currentPage = 0;
+
+  // ข้อมูลบัญชีต่างๆ
+  final List<AccountModel> coopAccounts = [
+    AccountModel(
+      title: 'บัญชีออมทรัพย์',
+      accountNumber: '001-2-34567-8',
+      balance: 125450.00,
+      icon: Icons.savings,
+      color: Colors.blue,
+    ),
+    AccountModel(
+      title: 'บัญชีเงินฝากประจำ',
+      accountNumber: '001-3-45678-9',
+      balance: 500000.00,
+      icon: Icons.account_balance,
+      color: Colors.indigo,
+    ),
+    AccountModel(
+      title: 'บัญชีหุ้น',
+      accountNumber: '001-4-56789-0',
+      balance: 85000.00,
+      icon: Icons.trending_up,
+      color: Colors.purple,
+    ),
+  ];
+
+  final List<AccountModel> bankAccounts = [
+    AccountModel(
+      title: 'บัญชีออมทรัพย์',
+      accountNumber: '123-4-56789-0',
+      balance: 89320.50,
+      icon: Icons.account_balance_wallet,
+      color: Colors.green,
+    ),
+    AccountModel(
+      title: 'บัญชีกระแสรายวัน',
+      accountNumber: '123-5-67890-1',
+      balance: 45600.00,
+      icon: Icons.payment,
+      color: Colors.teal,
+    ),
+    AccountModel(
+      title: 'บัญชีเงินฝากประจำ',
+      accountNumber: '123-6-78901-2',
+      balance: 1200000.00,
+      icon: Icons.lock_clock,
+      color: Colors.cyan,
+    ),
+  ];
 
   @override
   void initState() {
@@ -24,6 +78,7 @@ class _ManageAccountPageState extends State<ManageAccountPage> with SingleTicker
     );
   }
 
+  @override
   void dispose() {
     _pageController.dispose();
     _animationController.dispose();
@@ -38,10 +93,11 @@ class _ManageAccountPageState extends State<ManageAccountPage> with SingleTicker
     );
     _animationController.forward(from: 0);
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
         child: Container(
@@ -66,127 +122,9 @@ class _ManageAccountPageState extends State<ManageAccountPage> with SingleTicker
       body: Column(
         children: [
           // ปุ่มสลับ
-          Container(
-            margin: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: AnimatedBuilder(
-                    animation: _pageController,
-                    builder: (context, child) {
-                      double value = 0;
-                      if (_pageController.hasClients) {
-                        value = _pageController.page ?? 0;
-                      }
-                      return GestureDetector(
-                        onTap: () => _switchToPage(0),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          decoration: BoxDecoration(
-                            gradient: value < 0.5
-                                ? LinearGradient(
-                                    colors: [
-                                      Colors.blue[600]!,
-                                      Colors.blue[400]!
-                                    ],
-                                  )
-                                : null,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.account_balance,
-                                color: value < 0.5
-                                    ? Colors.white
-                                    : Colors.grey[600],
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                'Coop Account',
-                                style: TextStyle(
-                                  color: value < 0.5
-                                      ? Colors.white
-                                      : Colors.grey[600],
-                                  fontWeight: value < 0.5
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Expanded(
-                  child: AnimatedBuilder(
-                    animation: _pageController,
-                    builder: (context, child) {
-                      double value = 0;
-                      if (_pageController.hasClients) {
-                        value = _pageController.page ?? 0;
-                      }
-                      return GestureDetector(
-                        onTap: () => _switchToPage(1),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          decoration: BoxDecoration(
-                            gradient: value >= 0.5
-                                ? LinearGradient(
-                                    colors: [
-                                      Colors.green[600]!,
-                                      Colors.green[400]!
-                                    ],
-                                  )
-                                : null,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.account_balance_wallet,
-                                color: value >= 0.5
-                                    ? Colors.white
-                                    : Colors.grey[600],
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                'Bank Account',
-                                style: TextStyle(
-                                  color: value >= 0.5
-                                      ? Colors.white
-                                      : Colors.grey[600],
-                                  fontWeight: value >= 0.5
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
+          AccountToggleButton(
+            pageController: _pageController,
+            onPageSelected: _switchToPage,
           ),
 
           // เนื้อหาหน้า
@@ -200,148 +138,21 @@ class _ManageAccountPageState extends State<ManageAccountPage> with SingleTicker
                 _animationController.forward(from: 0);
               },
               children: [
-                _buildAccountPage(
-                  'Coop Account',
-                  Icons.account_balance,
-                  Colors.blue,
-                  '฿125,450.00',
-                  'บัญชีสหกรณ์ออมทรัพย์',
+                AccountList(
+                  animationController: _animationController,
+                  accounts: coopAccounts,
+                  title: 'บัญชีสหกรณ์',
                 ),
-                _buildAccountPage(
-                  'Bank Account',
-                  Icons.account_balance_wallet,
-                  Colors.green,
-                  '฿89,320.50',
-                  'บัญชีธนาคาร',
+                AccountList(
+                  animationController: _animationController,
+                  accounts: bankAccounts,
+                  title: 'บัญชีธนาคาร',
                 ),
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-  Widget _buildAccountPage(
-    String title,
-    IconData icon,
-    MaterialColor color,
-    String balance,
-    String subtitle,
-  ) {
-    return AnimatedBuilder(
-      animation: _animationController,
-      builder: (context, child) {
-        return Transform.scale(
-          scale: 0.9 + (_animationController.value * 0.1),
-          child: Opacity(
-            opacity: 0.7 + (_animationController.value * 0.3),
-            child: child,
-          ),
-        );
-      },
-      child: Container(
-        margin: const EdgeInsets.all(20),
-        padding: const EdgeInsets.all(30),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              color[400]!,
-              color[600]!,
-            ],
-          ),
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: [
-            BoxShadow(
-              color: color.withOpacity(0.3),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              size: 80,
-              color: Colors.white,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              subtitle,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white.withOpacity(0.9),
-              ),
-            ),
-            const SizedBox(height: 40),
-            const Text(
-              'ยอดเงินคงเหลือ',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white70,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              balance,
-              style: const TextStyle(
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                buildActionButton(Icons.add, 'ฝากเงิน'),
-                buildActionButton(Icons.remove, 'ถอนเงิน'),
-                buildActionButton(Icons.swap_horiz, 'โอนเงิน'),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-  
-
-  Widget buildActionButton(IconData icon, String label) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-          ),
-        ),
-      ],
     );
   }
 }
