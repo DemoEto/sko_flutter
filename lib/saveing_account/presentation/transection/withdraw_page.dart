@@ -1,10 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'widgets/numpadWidget.dart';
+import 'widgets/cardAccountWidget.dart';
 
-class WithdrawPage extends StatelessWidget {
+class WithdrawPage extends StatefulWidget {
   const WithdrawPage({super.key});
 
   @override
+  State<WithdrawPage> createState() => _WithdrawPageState();
+}
+
+class _WithdrawPageState extends State<WithdrawPage> {
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(70),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF4A7FD8),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+          child: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            iconTheme: const IconThemeData(color: Colors.white),
+            title: Text(
+              context.tr("WithdrawDeposites"),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ),
+      body: Column(children: [
+        Cardaccountwidget(),
+        Numpadwidget(),
+      ],)
+    );
   }
 }

@@ -441,7 +441,7 @@
     "allowBeforeTransaction": "ไม่พบบัญชีที่สามารถทำรายการได้ ท่านต้องอนุญาตบัญชีที่สามารถทำรายการได้ก่อนจะทำธุรกรรม",
     "notEnoughMoneyForTransaction": "จำนวนเงินไม่เพียงพอสำหรับการทำธุรกรรม",
     "pleaseSelectAccountForTransactions": "กรุณาเลือกบัญชีสำหรับทำรายการ",
-    "pleaseSelectDestinationAccount": "กรุณาเลือกบัญชีปลายทางร",
+    "pleaseSelectDestinationAccount": "กรุณาเลือกบัญชีปลายทาง",
     "LoanContracts": "สัญญาเงินกู้",
     "RemainingDeptbeforPayment": "หนี้คงเหลือก่อนชำระ",
     "OutstandingInt": "ดอกเบี้ยค้างชำระ",
@@ -489,7 +489,5 @@
     "Meetings":"รายการประชุม",
     "ApplicationSettings":"ตั้งค่าแอปพลิเคชั่น",
     "AddCoopAccount":"เพิ่มบัญชีสหกรณ์",
-    "AddBackAccount":"เพิ่มบัญชีธนาคาร"
-
-
+    "AddBankAccount":"เพิ่มบัญชีธนาคาร"
 }
