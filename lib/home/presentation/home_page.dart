@@ -17,28 +17,33 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: TitlenameAppBar(),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const[
+        child: Center(
+          child: Container(
+            width: 800,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  // SizedBox(height: 20),
 
-              SizedBox(height: 20),
+                  // ส่วนที่ 2: Wallet Section
+                  walletWidget(),
 
-              // ส่วนที่ 2: Wallet Section
-              walletWidget(),
+                  SizedBox(height: 20),
 
-              SizedBox(height: 20),
+                  // ส่วนที่ 3: Transaction Section
+                  transactionWidget(),
 
-              // ส่วนที่ 3: Transaction Section
-              transactionWidget(),
+                  SizedBox(height: 20),
 
-              SizedBox(height: 20),
+                  // ส่วนที่ 4: General Section
+                  generalWidget(),
 
-              // ส่วนที่ 4: General Section
-              generalWidget(),
-
-              SizedBox(height: 20),
-            ],
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
           ),
         ),
       ),
