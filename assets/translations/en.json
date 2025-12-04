@@ -493,5 +493,8 @@
     "Meetings":"Meetings",
     "ApplicationSettings":"Application Settings",
     "AddCoopAccount":"Add Co-op Account",
-    "AddBankAccount":"Add Bank Account"
+    "AddBankAccount":"Add Bank Account",
+    "ClearFillter":"Clear Fillter",
+    "Found":"Found",
+    "NoDataForSelectedDates":"No data for selected dates"
 }

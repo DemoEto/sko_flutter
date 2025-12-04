@@ -489,5 +489,8 @@
     "Meetings":"รายการประชุม",
     "ApplicationSettings":"ตั้งค่าแอปพลิเคชั่น",
     "AddCoopAccount":"เพิ่มบัญชีสหกรณ์",
-    "AddBankAccount":"เพิ่มบัญชีธนาคาร"
+    "AddBankAccount":"เพิ่มบัญชีธนาคาร",
+    "ClearFillter":"ล้างฟิลเตอร์",
+    "Found":"พบ",
+    "NoDataForSelectedDates":"ไม่พบรายการในช่วงวันที่ที่เลือก"
 }
