@@ -1,4 +1,3 @@
-import 'package:sko_flutter/general/presentation/widgets/shareListWidget.dart';
 
 class Item {
   final String title;
