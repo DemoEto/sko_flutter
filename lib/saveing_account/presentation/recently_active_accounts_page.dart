@@ -27,7 +27,7 @@ class _RecentlyActiveAccountsPageState extends State<RecentlyActiveAccountsPage>
             elevation: 0,
             iconTheme: const IconThemeData(color: Colors.white),
             title: Text(
-              context.tr("TransferMyself"),
+              context.tr("RecentTransactions"),
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

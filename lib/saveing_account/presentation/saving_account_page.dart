@@ -22,7 +22,7 @@ class SavingAccountPage extends StatelessWidget {
             elevation: 0,
             iconTheme: const IconThemeData(color: Colors.white),
             title: Text(
-              context.tr("TransferMyself"),
+              context.tr("ViewAccount"),
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
