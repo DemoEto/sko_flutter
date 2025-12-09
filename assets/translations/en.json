@@ -480,7 +480,7 @@
     "ViewAccount":"View Account",
     "RecentTransactions":"Recent\nTransactions",
     "DebtContract_count":"{{count}} Contract",
-    "ViewLoanContract":"View Loan Contract",
+    "ViewLoanContract":"View Loan {Contract}",
     "Langage":"Langage",
     "ManageAccount":"Manage Account",
     "PayShareDebt":"Pay Share Debt",

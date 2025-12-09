@@ -5,13 +5,13 @@ import 'guaranteesCardWidget.dart';
 
 class GuaranteesList extends StatelessWidget {
   final AnimationController animationController;
-  final List<GuaranteesModel> accounts;
+  final List<GuaranteesModel> guarantees;
   final String title;
 
   const GuaranteesList({
     Key? key,
     required this.animationController,
-    required this.accounts,
+    required this.guarantees,
     required this.title,
   }) : super(key: key);
 
@@ -28,43 +28,22 @@ class GuaranteesList extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[800],
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          //   child: Text(
+          //     title,
+          //     style: TextStyle(
+          //       fontSize: 24,
+          //       fontWeight: FontWeight.bold,
+          //       color: Colors.grey[800],
+          //     ),
+          //   ),
+          // ),
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              itemCount: accounts.length,
+              itemCount: guarantees.length,
               itemBuilder: (context, index) {
-                // if (index == accounts.length) {
-                //   // ถ้าเป็นบัญชีสหกรณ์ → แสดงปุ่มเพิ่มบัญชีสหกรณ์
-                //   if (title == "บัญชีสหกรณ์") {
-                //     return Addcoopaccountbuttonwidget(
-                //       onTap: () {
-                //         showAccountDetails(context);
-                //       },
-                //     );
-                //   }
-
-                //   // ถ้าเป็นบัญชีธนาคาร
-                //   if (title == "บัญชีธนาคาร") {
-                //     // return Addbankaccountbuttonwidget(
-                //     //   onTap: () {
-                        
-                //     //   },
-                //     // );
-                //   }
-
-                //   return const SizedBox.shrink(); // กัน error
-                // }
                 return TweenAnimationBuilder<double>(
                   tween: Tween(begin: 0.0, end: 1.0),
                   duration: Duration(milliseconds: 300 + (index * 100)),
@@ -75,7 +54,7 @@ class GuaranteesList extends StatelessWidget {
                       child: Opacity(opacity: value, child: child),
                     );
                   },
-                  child: GuaranteesCard(account: accounts[index]),
+                  child: GuaranteesCard(guarantee: guarantees[index]),
                 );
               },
             ),
