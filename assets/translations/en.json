@@ -496,5 +496,7 @@
     "AddBankAccount":"Add Bank Account",
     "ClearFillter":"Clear Fillter",
     "Found":"Found",
-    "NoDataForSelectedDates":"No data for selected dates"
+    "NoDataForSelectedDates":"No data for selected dates",
+    "FormRequestLoanOnline":"Form request loan online",
+    "RequestType":"Request type"
 }

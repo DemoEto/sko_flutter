@@ -5,6 +5,7 @@ import 'package:sko_flutter/saveing_account/presentation/transection/manage_acco
 import 'package:sko_flutter/saveing_account/presentation/transection/pay_debt_page.dart';
 import 'package:sko_flutter/saveing_account/presentation/transection/withdraw_page.dart';
 import 'package:sko_flutter/saveing_account/presentation/transection/transfer_ownaccount_page.dart';
+import 'package:sko_flutter/saveing_account/presentation/transection/form_request_loan_page.dart';
 
 class transactionWidget extends StatelessWidget {
   const transactionWidget({Key? key}) : super(key: key);
@@ -33,22 +34,30 @@ class transactionWidget extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const SizedBox(width: 20),
+              _buildTransactionItem(
+                context,
+                Icons.request_page_rounded,
+                context.tr("FormRequestLoanOnline"),
+                Colors.pink,
+                const FormRequestLoanPage(),
+              ),const SizedBox(width: 24),
               _buildTransactionItem(
                 context,
                 Icons.wallet,
                 context.tr("ManageAccount"),
                 Colors.green,
                 const ManageAccountPage(),
-              ),
+              ),const SizedBox(width: 24),
               _buildTransactionItem(
                 context,
                 Icons.phone_in_talk,
                 context.tr("PayShareDebt"),
                 Colors.orange,
                 const PayDebtPage(),
-              ),
+              ),const SizedBox(width: 24),
               _buildTransactionItem(
                 context,
                 Icons.store,
@@ -56,13 +65,7 @@ class transactionWidget extends StatelessWidget {
                 Colors.blue,
                 const WithdrawPage(),
               ),
-              _buildTransactionItem(
-                context,
-                Icons.account_balance,
-                context.tr("DepositAccount"),
-                Colors.orange,
-                const DepositPage(),
-              ),
+              
             ],
           ),
           const SizedBox(height: 15),
@@ -70,6 +73,14 @@ class transactionWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(width: 20),
+              _buildTransactionItem(
+                context,
+                Icons.account_balance,
+                context.tr("DepositAccount"),
+                Colors.orange,
+                const DepositPage(),
+              ),
+              const SizedBox(width: 24),
               _buildTransactionItem(
                 context,
                 Icons.account_balance_wallet,
