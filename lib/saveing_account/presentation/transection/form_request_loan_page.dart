@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'widgets/requesttypeWidget.dart';
+import 'widgets/formrequestWidget.dart';
 
 class FormRequestLoanPage extends StatelessWidget {
   const FormRequestLoanPage({super.key});
@@ -8,7 +9,6 @@ class FormRequestLoanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.grey[50],
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
         child: Container(
@@ -38,58 +38,16 @@ class FormRequestLoanPage extends StatelessWidget {
         child: Container(
           width: 800,
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsGeometry.all(20),
-                  child: Text(
-                    context.tr("RequestType"),
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-                Requesttypewidget(
-                  name:'(11) เงินกู้สามัญเพื่อแก้ไขปัญหาหนี้สินของสมาชิก',
-                  interest: '4.75%',
-                ),
-                Requesttypewidget(
-                  name:'(12) เงินกู้สามัญเพื่อซื้อรถยนต์ไฟฟ้า EV',
-                  interest: '4.50%',
-                ),
-                Requesttypewidget(
-                  name:'(18) สามัญเพื่อผู้ประสบภัย',
-                  interest: '4.50%',
-                ),
-                Requesttypewidget(
-                  name:'(21) สามัญใช้หุ้นค้ำประกัน',
-                  interest: '5.75%',
-                ),
-                Requesttypewidget(
-                  name:'(24) สามัญใช้คนค้ำประกัน',
-                  interest: '6.00%',
-                ),
-                Requesttypewidget(
-                  name:'(26) สามัญเพื่อการศึกษา',
-                  interest: '4.50%',
-                ),
-                Requesttypewidget(
-                  name:'(29) สามัญใช้อสังหาริมทรัพย์ค้ำประกัน',
-                  interest: '5.75%',
-                ),
-                Requesttypewidget(
-                  name:'(33) เงินกู้พิเศษเพื่อการเคหะ',
-                  interest: '5.50%',
-                ),
-                Requesttypewidget(
-                  name:'(34) เงินกู้พิเศษเพื่อประกอบอาชีพ',
-                  interest: '5.50%',
-                ),
-                Requesttypewidget(
-                  name:'(88) พิเศษ ATM',
-                  interest: '5.75%',
-                ),
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 20,),
+                  Formrequestwidget()
+                  ],
+              ),
             ),
           ),
         ),
@@ -97,17 +55,3 @@ class FormRequestLoanPage extends StatelessWidget {
     );
   }
 }
-      
-      
-      // Column(
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: [
-      //     Padding(
-      //       padding: EdgeInsetsGeometry.all(20),
-      //       child: Text(
-      //         context.tr("RequestType"),
-      //         style: TextStyle(fontSize: 16),
-      //       ),
-      //     ),Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
-      //     child: Row(children: [Requesttypewidget()]),
-      //     )

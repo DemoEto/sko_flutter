@@ -287,7 +287,7 @@
     "SelectYearAssist": "Select welfare year",
     "SelectAssistType": "Select welfare",
     "TotalWelfareYear": "Total welfare benefits for the year",
-    "ReceivingMoney": "Receiving money",
+    "ReceivingMoney": "Receiving money method",
     "AssistNo": "Welfare No.",
     "AssistPayDate": "Welfare pay date",
     "AssistBal": "Total welfare",
@@ -498,5 +498,7 @@
     "Found":"Found",
     "NoDataForSelectedDates":"No data for selected dates",
     "FormRequestLoanOnline":"Form request loan online",
-    "RequestType":"Request type"
+    "RequestType":"Request type",
+    "GuarantorMemberNo":"Guarantor Member No ",
+    "EvidenceForRequests":"Evidence for requests"
 }

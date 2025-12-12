@@ -495,5 +495,8 @@
     "NoDataForSelectedDates":"ไม่พบรายการในช่วงวันที่ที่เลือก",
     "YouCallWho":"คุณค้ำใคร",
     "FormRequestLoanOnline":"ใบคำขอกู้ออนไลน์",
-    "RequestType":"ประเภทใบคำขอ"
+    "RequestType":"ประเภทใบคำขอ",
+    "GuarantorMemberNo":"เลขสมาชิกผู้คำ้ประกัน ",
+    "EvidenceForRequests":"หลักฐานสำหรับการร้องขอ"
+
 }
