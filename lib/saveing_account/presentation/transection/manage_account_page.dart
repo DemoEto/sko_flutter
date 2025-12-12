@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'widgets/accountToggleButtonWidget.dart';
 import 'widgets/accountListWidget.dart';
 import 'package:easy_localization/easy_localization.dart';
-import '../../data/models/accountModel.dart';
+import '../models/accountModel.dart';
 import 'widgets/addCoopAccountButtonWidget.dart';
 
 class ManageAccountPage extends StatefulWidget {

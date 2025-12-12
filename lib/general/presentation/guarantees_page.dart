@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'widgets/guaranteesModeWidget.dart';
-import '../data/models/guaranteesModel.dart';
+import 'models/guaranteesModel.dart';
 import 'widgets/guaranteesListWidget.dart';
 
 class GuaranteesPage extends StatefulWidget {

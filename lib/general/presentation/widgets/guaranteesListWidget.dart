@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/guaranteesModel.dart';
+import '../models/guaranteesModel.dart';
 import 'guaranteesCardWidget.dart';
 // import 'addCoopAccountButtonWidget.dart';
 

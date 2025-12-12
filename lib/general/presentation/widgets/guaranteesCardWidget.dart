@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import '../../data/models/guaranteesModel.dart';
+import '../models/guaranteesModel.dart';
 
 class GuaranteesCard extends StatelessWidget {
   final GuaranteesModel guarantee;

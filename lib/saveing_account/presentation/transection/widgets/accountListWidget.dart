@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/accountModel.dart';
+import '../../models/accountModel.dart';
 import 'compactAccountCardWidget.dart';
 import 'addCoopAccountButtonWidget.dart';
 
