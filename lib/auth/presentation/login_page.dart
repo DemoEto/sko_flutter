@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sko_flutter/home/presentation/home_page.dart';
-import 'package:sko_flutter/auth/register_page.dart';
+import 'package:sko_flutter/auth/presentation/register_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class LoginPage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sko_flutter/auth/login_page.dart';
+import 'package:sko_flutter/auth/presentation/login_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 void main() async{
